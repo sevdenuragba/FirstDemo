@@ -4,12 +4,15 @@ const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomLeft;
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer(this.color1, this.color2, this.color3, {super.key});
+   GradientContainer(this.color1, this.color2, this.color3, {super.key});
   final Color color1;
   final Color color2;
   final Color color3;
+  var activeDiceImage = 'assets/images/dice-3.png';
 
-  void rollDice() {}
+  void rollDice() {
+    activeDiceImage = 'assets/images/dice-4.png';
+  }
 
   @override
   Widget build(context) {
@@ -29,7 +32,7 @@ class GradientContainer extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset('assets/images/dice-3.png', width: 240),
+            Image.asset(activeDiceImage, width: 240),
             const SizedBox(height: 25,),
             TextButton(
               onPressed: rollDice,
